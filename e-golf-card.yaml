@@ -1,0 +1,114 @@
+type: picture-elements
+image: /local/e-golf.png
+elements:
+  - type: image
+    entity: switch.wvwxxxxxxxxxxxx_electric_climatisation
+    image: /local/blank.png
+    style:
+      top: 37.5%
+      left: 55%
+      width: 37.1%
+    state_image:
+      'on': /local/e-golf-heizung.png
+  - type: image
+    entity: binary_sensor.wvwxxxxxxxxxxxx_charging_cable_connected
+    image: /local/blank.png
+    style:
+      top: 55.8%
+      left: 44.5%
+      width: 75%
+    state_image:
+      'off': /local/wallbox.png
+      'on': /local/wallbox-connected.png
+  - type: image
+    entity: switch.wvwxxxxxxxxxxxx_charging
+    image: /local/blank.png
+    style:
+      top: 55.8%
+      left: 44.5%
+      width: 75%
+    state_image:
+      'on': /local/wallbox-connected-and-charging.png
+  - type: image
+    entity: binary_sensor.wvwxxxxxxxxxxxx_parking_light
+    image: /local/blank.png
+    style:
+      top: 65.1%
+      left: 41.3%
+      width: 32%
+    state_image:
+      'on': /local/e-golf-parklichter-cut.png
+  - type: image
+    entity: binary_sensor.wvwxxxxxxxxxxxx_doors_locked
+    image: /local/blank.png
+    style:
+      top: 42.3%
+      left: 59%
+      width: 2%
+    state_image:
+      locked: /local/blink.gif
+  - type: state-icon
+    entity: binary_sensor.wvwxxxxxxxxxxxx_doors_locked
+    style:
+      top: 10%
+      left: 5%
+  - type: state-icon
+    entity: switch.wvwxxxxxxxxxxxx_electric_climatisation
+    hold_action:
+      action: toggle
+    style:
+      top: 10%
+      left: 15%
+  - type: state-icon
+    entity: switch.wvwxxxxxxxxxxxx_window_heater
+    hold_action:
+      action: toggle
+    style:
+      top: 10%
+      left: 25%
+  - type: state-icon
+    entity: sensor.wvwxxxxxxxxxxxx_battery_level
+    style:
+      top: 10%
+      left: 62%
+  - type: state-label
+    entity: sensor.wvwxxxxxxxxxxxx_battery_level
+    style:
+      top: 10%
+      left: 69%
+  - type: state-icon
+    entity: sensor.wvwxxxxxxxxxxxx_electric_range
+    style:
+      top: 11%
+      left: 81%
+  - type: state-label
+    entity: sensor.wvwxxxxxxxxxxxx_electric_range
+    style:
+      top: 10%
+      left: 91%
+  - type: state-icon
+    entity: sensor.wvwxxxxxxxxxxxx_odometer
+    style:
+      top: 90%
+      left: 5%
+  - type: state-label
+    entity: sensor.wvwxxxxxxxxxxxx_odometer
+    style:
+      top: 90%
+      left: 17%
+  - type: state-label
+    entity: sensor.car_fully_charged_time
+    style:
+      top: 90%
+      left: 50%
+  - type: state-icon
+    entity: sensor.wvwxxxxxxxxxxxx_service_inspection_days
+    style:
+      top: 90%
+      left: 80%
+  - type: state-label
+    entity: sensor.wvwxxxxxxxxxxxx_service_inspection_days
+    style:
+      top: 90%
+      left: 90%
+
