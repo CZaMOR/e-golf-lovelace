@@ -3,10 +3,10 @@ sensor:
     sensors:
       car_fully_charged_time:
         value_template: >-
-          {% if is_state('switch.wvwzzzauzj8900872_charging', 'on') %}
-            {% set charging_time_left_str = states('sensor.wvwzzzauzj8900872_charging_time_left') %}
+          {% if is_state('switch.xxxxxxxxxxxxxxx_charging', 'on') %}
+            {% set charging_time_left_str = states('sensor.xxxxxxxxxxxxxxx_charging_time_left') %}
             {% set charging_time_left = charging_time_left_str.split(',')[0] | int(default=0) %}
-            {% set last_connected_time_str = states('sensor.wvwzzzauzj8900872_last_connected') %}
+            {% set last_connected_time_str = states('sensor.xxxxxxxxxxxxxxx_last_connected') %}
             
             {% if last_connected_time_str %}
               {% set last_connected_time = as_timestamp(strptime(last_connected_time_str, '%Y-%m-%dT%H:%M:%S%z')) | int %}
