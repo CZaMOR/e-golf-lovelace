@@ -3,11 +3,11 @@ sensor:
     sensors:
       car_fully_charged_time:
         value_template: >-
-          {% if is_state('switch.xxxxxxxxxxxxxxx_charging', 'on') %}
+          {% if is_state('switch.sxxxxxxxxxxxxxxx', 'on') %}
             {% set charging_time_left_str = states('sensor.xxxxxxxxxxxxxxx_charging_time_left') %}
             {% set charging_time_left = charging_time_left_str.split(',')[0] | int(default=0) %}
             {% set last_connected_time_str = states('sensor.xxxxxxxxxxxxxxx_last_connected') %}
-            
+      
             {% if last_connected_time_str %}
               {% set last_connected_time = as_timestamp(strptime(last_connected_time_str, '%Y-%m-%dT%H:%M:%S%z')) | int %}
             {% else %}
@@ -16,15 +16,16 @@ sensor:
 
             {% if charging_time_left != 0 %}
               {% set fully_charged_time_seconds = last_connected_time + charging_time_left * 60 + 3600 %}
-              {% set hours = ((fully_charged_time_seconds % 86400) // 3600) %}
-              {% set minutes = ((fully_charged_time_seconds % 86400) % 3600) // 60 %}
+              {% set fully_charged_time_seconds_with_extra_hour = fully_charged_time_seconds + 3600 %}
+              {% set hours = ((fully_charged_time_seconds_with_extra_hour % 86400) // 3600) %}
+              {% set minutes = ((fully_charged_time_seconds_with_extra_hour % 86400) % 3600) // 60 %}
               Car will be fully charged at: {{ "%02d:%02d" | format(hours, minutes) }} 
             {% else %}
-              Data not available 
+              Data not available  
             {% endif %}
           {% else %}
-            Not charging 
+            Not charging
           {% endif %}
-          
+    
         friendly_name: 'Car Fully Charged Time'
         icon_template: mdi:car-electric
