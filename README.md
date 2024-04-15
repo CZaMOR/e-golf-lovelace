@@ -1,6 +1,5 @@
 ![nabíjení auta](https://github.com/CZaMOR/e-golf-lovelace/assets/133046322/4f3fd98e-0d97-4dbf-b63f-b6d587348481)
-
-
+![image](https://github.com/CZaMOR/e-golf-lovelace/assets/133046322/c3b2d098-ce26-4f3d-a38c-0ae47c1c9076)
 
 1. Copy images to root of your WWW folder
 2. add sensor to your configuration.yaml
